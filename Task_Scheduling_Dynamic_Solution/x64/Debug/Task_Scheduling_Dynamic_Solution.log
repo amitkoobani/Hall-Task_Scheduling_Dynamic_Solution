@@ -1,0 +1,10 @@
+﻿  Task_Scheduling_Dynamic_Solution.cpp
+C:\Users\amitk\source\repos\Task_Scheduling_Dynamic_Solution\Task_Scheduling_Dynamic_Solution\Task_Scheduling_Dynamic_Solution.cpp(16,40): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\amitk\source\repos\Task_Scheduling_Dynamic_Solution\Task_Scheduling_Dynamic_Solution\Task_Scheduling_Dynamic_Solution.cpp(16,21): warning C4267: 'initializing': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\amitk\source\repos\Task_Scheduling_Dynamic_Solution\Task_Scheduling_Dynamic_Solution\Task_Scheduling_Dynamic_Solution.cpp(88,40): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\amitk\source\repos\Task_Scheduling_Dynamic_Solution\Task_Scheduling_Dynamic_Solution\Task_Scheduling_Dynamic_Solution.cpp(88,21): warning C4267: 'initializing': conversion from 'size_t' to 'const int', possible loss of data
+C:\Users\amitk\source\repos\Task_Scheduling_Dynamic_Solution\Task_Scheduling_Dynamic_Solution\Task_Scheduling_Dynamic_Solution.cpp(164,40): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\amitk\source\repos\Task_Scheduling_Dynamic_Solution\Task_Scheduling_Dynamic_Solution\Task_Scheduling_Dynamic_Solution.cpp(164,21): warning C4267: 'initializing': conversion from 'size_t' to 'const int', possible loss of data
+  Task_Scheduling_Dynamic_Solution.vcxproj -> C:\Users\amitk\source\repos\Task_Scheduling_Dynamic_Solution\x64\Debug\Task_Scheduling_Dynamic_Solution.exe
+  'pwsh.exe' is not recognized as an internal or external command,
+  operable program or batch file.
