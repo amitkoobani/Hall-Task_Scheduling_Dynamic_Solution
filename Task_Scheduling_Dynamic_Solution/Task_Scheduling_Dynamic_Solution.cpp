@@ -209,9 +209,6 @@ int Nosplit(vector<int>& JobsDuration, int DueDate) {
 }
 
 
-
-
-
 vector<int> initializeVector(int size, int minValue, int maxValue) {
 	vector<int> result(size);
 	for (int i = 0; i < size; ++i) {
@@ -221,25 +218,62 @@ vector<int> initializeVector(int size, int minValue, int maxValue) {
 }
 
 
+
+int Optcet(vector<int>& JobsDuration, int DueDate) {
+	
+	sort(JobsDuration.begin(), JobsDuration.end());
+
+	const int num_jobs = JobsDuration.size();
+	int sum_result = 0;
+	int cost = 0;
+
+	for (int i = num_jobs - 1; i >= 0; i -= 2 ) {
+		sum_result += JobsDuration[i];
+	}
+	if (sum_result <= DueDate) {
+
+		for (int i = 0; i < num_jobs; i++) {
+			cost += ((i + 1) / 2) * JobsDuration[num_jobs - 1 - i];
+		}
+		cout << "the minimum price is: " << cost << endl;
+		return cost;
+	}
+	if (DueDate <= JobsDuration[0]){
+		for(int i = 0; i < num_jobs; i++) {
+			cost += (num_jobs-i) * JobsDuration[i];
+		}
+		cost -= num_jobs * DueDate;
+		cout << "the minimum price is: " << cost << endl;
+		return cost;
+	}
+	int evs_price = EVS(JobsDuration, DueDate);
+	int tvs_price = TVS(JobsDuration, DueDate);
+	int nosplit_price = Nosplit(JobsDuration, DueDate);
+
+	cout << "the minimum price in EVS is:" << evs_price << endl;
+	cout << "the minimum price in TVS is:" << tvs_price << endl;
+	cout << "the minimum price in Nosplit is:" << nosplit_price << endl;
+
+	cout << "the minimum price is: " << min(evs_price, min(tvs_price, nosplit_price)) << endl;
+
+	return min(evs_price, min(tvs_price, nosplit_price));
+}
+
+
 int main()
 {
 	//srand(static_cast<unsigned int>(time(nullptr)));
 
 	vector<int> JobsDuration = {1,3,7,8,8,9};
 	int d = 14;
-	
+
+	//vector<int> JobsDuration = { 1,3,7,8,8,9 };
+	//int d = 24;
+
 	//std::vector<int> JobsDuration = {2, 3, 3, 5, 7};
 	//int d = 13;
-	int evs_price = EVS(JobsDuration, d);
-	int tvs_price = TVS(JobsDuration, d);
-	int nosplit_price = Nosplit(JobsDuration, d);
 
-	cout << "the minimum price in EVS is:" << evs_price<<endl;
-	cout << "the minimum price in TVS is:" << tvs_price<<endl;
-	cout << "the minimum price in Nosplit is:" << nosplit_price << endl;
-
-	cout << "the minimum price is: " << min(evs_price, min(tvs_price, nosplit_price)) << endl;
-
+	int result = Optcet(JobsDuration, d);
 
 	return 0;
 }
