@@ -221,7 +221,7 @@ vector<int> initializeVector(int size, int minValue, int maxValue) {
 
 int Optcet(vector<int>& JobsDuration, int DueDate) {
 	
-	/*sort(JobsDuration.begin(), JobsDuration.end());
+	sort(JobsDuration.begin(), JobsDuration.end());
 
 	const int num_jobs = JobsDuration.size();
 	int sum_result = 0;
@@ -245,7 +245,7 @@ int Optcet(vector<int>& JobsDuration, int DueDate) {
 		cost -= num_jobs * DueDate;
 		cout << "the minimum price is: " << cost << endl;
 		return cost;
-	}*/
+	}
 	int evs_price = EVS(JobsDuration, DueDate);
 	int tvs_price = TVS(JobsDuration, DueDate);
 	int nosplit_price = Nosplit(JobsDuration, DueDate);
